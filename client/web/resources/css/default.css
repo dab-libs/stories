@@ -1,0 +1,28 @@
+#mainPane {
+  position: relative;
+  background: #d3d3ff;
+  height: 300px;
+  overflow: scroll;
+}
+
+.storyDialog {
+
+  width: 160px;
+  min-height: 160px;
+  border: black 1px solid;
+}
+
+.storyDialog #name {
+  background: blue;
+  color: white;
+  font-size: 14px;
+  padding: 6px;
+}
+
+.storyDialog #description {
+  min-height: 128px;
+  background: white;
+  color: black;
+  font-size: 14px;
+  padding: 6px;
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8"/>
+  <title>Story</title>
+  <link rel="stylesheet" type="text/css" href="resources/css/default.css">
+</head>
+<body>
+
+<div id="mainPane"></div>
+
+<script src="vendors/react/react.development.js"></script>
+<script src="vendors/react/react-dom.development.js"></script>
+<script src="resources/js/dialog.js"></script>
+<script src="resources/js/story.js"></script>
+
+<script>
+    let dialog = React.createElement(Story, {
+        dialogs: [
+            {
+                name: 'Block 1',
+                description: 'tttttt',
+                top: 25,
+                left: 40
+            },
+            {
+                name: 'Block 2',
+                description: 'tttttt',
+                top: 25,
+                left: 220
+            },
+            {
+                name: 'Block 3',
+                description: 'tttttt',
+                top: 25,
+                left: 400
+            },
+        ]
+    });
+    ReactDOM.render(
+        dialog,
+        document.getElementById('mainPane')
+    );
+</script>
+
+</body>
+</html>
