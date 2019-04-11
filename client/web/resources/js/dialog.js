@@ -2,11 +2,25 @@
 
 var Dialog = function() {
 
-  var links = React.createElement('div', {id: 'links'});
-
-  return class extends React.Component {
+  class Dialog extends React.Component {
     constructor(props) {
       super(props);
+    }
+
+    get left() {
+      return rootRef.current.offsetWidth;
+    }
+
+    get top() {
+      return rootRef.current.offsetTop;
+    }
+
+    get width() {
+      return rootRef.current.offsetWidth;
+    }
+
+    get height() {
+      return rootRef.current.offsetHeight;
     }
 
     render() {
@@ -17,14 +31,19 @@ var Dialog = function() {
           style: {
             display: 'block',
             position: 'absolute',
-            top: this.props.top,
-            left: this.props.left
-          }
+            top: this.props.dialog.top,
+            left: this.props.dialog.left
+          },
+          ref: rootRef
         },
-        React.createElement('div', {id: 'name'}, this.props.name),
-        React.createElement('div', {id: 'description'}, this.props.description)
+        React.createElement('div', {id: 'name'}, this.props.dialog.name),
+        React.createElement('div', {id: 'description'}, this.props.dialog.description),
+        React.createElement('div', {id: 'links'})
       );
     }
   }
 
+  const rootRef = React.createRef();
+
+  return Dialog;
 }();
